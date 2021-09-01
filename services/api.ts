@@ -1,4 +1,5 @@
 import axios, { AxiosError } from "axios";
+import { GetServerSidePropsContext } from "next";
 import { parseCookies, setCookie } from "nookies";
 import { signOut } from "../contexts/AuthContext";
 import { AuthTokenError } from "./errors/AuthTokenError";
@@ -11,7 +12,7 @@ type FailedRequestsQueue = {
 let isRefreshing: boolean = false;
 let failedRequestsQueue: FailedRequestsQueue[] = [];
 
-export function setupApiClient(ctx = undefined) {
+export function setupApiClient(ctx: GetServerSidePropsContext) {
   let cookies = parseCookies(ctx);
 
   const api = axios.create({

@@ -36,7 +36,7 @@ export default function Dashboard() {
   )
 }
 
-export const getServerSideProps = withSSRAuth(async (ctx) => {  
+export const getServerSideProps = withSSRAuth(async (ctx) => {    
   const apiClient = setupApiClient(ctx);    
   const response = await apiClient.get('/me');   
 
