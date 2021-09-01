@@ -16,7 +16,7 @@ export function setupApiClient(ctx = undefined) {
   let cookies = parseCookies(ctx);
 
   const api = axios.create({
-    baseURL: 'http://localhost:3333',
+    baseURL: 'https://nodejs-auth-mock.herokuapp.com',
     headers: {
       Authorization: `Bearer ${cookies['nextauth.token']}`
     }
