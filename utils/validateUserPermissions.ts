@@ -4,7 +4,7 @@ type User = {
 }
 
 type ValidateUserPermissions = {
-  user: User;
+  user?: User;
   permissions?: string[];
   roles?: string[];
 }
