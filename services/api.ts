@@ -12,7 +12,7 @@ type FailedRequestsQueue = {
 let isRefreshing: boolean = false;
 let failedRequestsQueue: FailedRequestsQueue[] = [];
 
-export function setupApiClient(ctx: GetServerSidePropsContext) {
+export function setupApiClient(ctx = undefined) {
   let cookies = parseCookies(ctx);
 
   const api = axios.create({
